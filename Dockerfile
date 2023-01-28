@@ -8,6 +8,8 @@ RUN yarn install
 COPY . .
 
 RUN yarn add -D @swc/cli @swc/core
+RUN yarn add -D rimraf
+
 RUN yarn build
 
 EXPOSE 8080
