@@ -17,8 +17,8 @@ services:
       - 8000:8000
       - 9229:9229 # debugger port
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - .:/user/src/app
+      - /user/src/app/node_modules
     command: yarn start:docker
     environment:
       DATABASE_URL: postgres://postgres@postgres/webapp_dev
