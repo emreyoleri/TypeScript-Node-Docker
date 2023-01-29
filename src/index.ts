@@ -7,8 +7,8 @@ const db = new PrismaClient({ log: ['error', 'info', 'query', 'warn'] });
 const genId = () => nanoid(16);
 
 const seedDatabase = async () => {
-  if ((await db.post.count()) === 0) {
-    await db.post.createMany({
+  if ((await db.pOST.count()) === 0) {
+    await db.pOST.createMany({
       data: [
         {
           id: genId(),
@@ -31,7 +31,7 @@ const app = express();
 app.use(morgan('dev'));
 
 app.get('/', async (req, res) => {
-  const posts = await db.post.findMany();
+  const posts = await db.pOST.findMany();
   res.json(posts);
 });
 
